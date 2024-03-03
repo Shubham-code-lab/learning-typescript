@@ -1,0 +1,1 @@
+console.log("as configure in tsconfig this file is excluded");

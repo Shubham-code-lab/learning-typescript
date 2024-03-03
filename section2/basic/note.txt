@@ -1,0 +1,15 @@
+Javascript uses dynamic types and Typescript uses static types
+
+Types:-
+number:-  1,1.5,-10    //all number no difference between float and integer
+string:- 'Hii', "Hii", `Hii`  //All text value
+boolean:- true, false   //Just these two truthy and falsy values
+
+
+javascript :-
+if(typeof num !==  'number')          //check during runtime
+
+
+
+Type inference :-
+const number = 5;
