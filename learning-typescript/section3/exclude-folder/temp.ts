@@ -1,0 +1,1 @@
+console.log("not compiled due to  rootDir setting in tsconfig");
