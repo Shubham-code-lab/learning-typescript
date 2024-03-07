@@ -1,0 +1,63 @@
+Automate compile ts file built js file on save  (cons :- only compile one file)
+tsc app.ts --watch
+
+//////////////////////////////////////////////////
+multiple file compiling
+tsc --init
+
+now if we run
+tsc    //will compile all typescript file
+tsc --watch //will watch all typescript file  //re-execute this command when any changes in tsconfig file
+
+
+Exclude file 
+ "exclude": [
+    "exclude-file.ts",
+    "node_modules",   //even if we don't mention it get excluded by default
+    "*.dev.ts",    // all file with suffix .dev.ts are excluded in same directory
+    "**/*.dev.ts" //all file with suffix .dev.ts are excluded in all directory
+  ]
+
+Include file
+//"include": [],  //work opposite of exclude
+
+
+javascript version to compile ts file to
+ "target": "es2016", 
+
+
+lib
+//if lib is set not set it set some default library/type defination
+ "lib": [], //now ts doesn't know about any library i.e :- console, document  //so error
+"lib": [   //default included library by typescript
+  "dom",   //now it understand console.log and document
+  "es6",   //all globally available es6 feature
+  "dom.iterable",
+  "scripthost"
+]
+
+
+"allowJs": true,  //allow compilation of javascript file too .js
+"checkJs": true,  //check syntax in javascript file .js
+
+
+"sourceMap": true,  //compile ts -> js file is complicate to understand or debug but this will generate a  ts file in source of inspect mode
+
+"outFile": "./",   //"./dist"    all the output js file are kept in .js file it replicate the folder structure too
+"outDir": "./",    //"./src"    only look into this folder and compile all the ts file and replicate folder structure in to "outFile"
+
+
+"removeComments": true,  //comment are removed in .js files
+
+"noEmit": true,   //don't generate .js or compile //useful when we only need syntax highlight  feature of typescript and no output js file
+
+ "downlevelIteration": true,  //in some case compilation gives error due to for loop //turning this feature on will not generate optimize/less/verbose[more code] code but it will compile the ts to js
+
+"noEmitOnError": false     //setting it to false indicate to generate .js file when on compile even there is error exist //setting it true will not allow it
+
+
+"strict": true,   //set all option true related strict in tsconfig
+
+
+rmdir /s /q .git    //remove gi and subdirectoy /s   // /q is for quit without message
+git remote add origin https://github.com/Shubham-code-lab/learning-typescript.git 
